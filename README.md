@@ -1,8 +1,8 @@
-# 📊 SQL Data Exploration Project
+#  SQL Data Exploration Project
 This project  focuses on exploring real-world data using **SQL**.  
 The goal is to demonstrate practical SQL skills through data cleaning, exploration, and insight generation.
 
-## 🔍 Project Purpose
+##  Project Purpose
 
 This project shows my ability to:
 - Work with real datasets  
@@ -14,7 +14,7 @@ This project shows my ability to:
 
 ---
 
-## 🛠️ Tools & Technologies
+##  Tools & Technologies
 
 - **SQL** (MySQL / SQL Server)
 - **CSV Datasets**
@@ -23,7 +23,7 @@ This project shows my ability to:
 
 ---
 
-## 📁 Dataset Used
+##  Dataset Used
 
 COVID-19 global dataset:
 
@@ -34,7 +34,7 @@ The datasets were imported into a SQL database for analysis.
 
 ---
 
-## 📌 What This Project Does
+##  What This Project Does
 
 ✔ Imports raw data into SQL  
 ✔ Cleans and formats data  
@@ -46,7 +46,7 @@ The datasets were imported into a SQL database for analysis.
 
 ---
 
-## 🧠 Skills Demonstrated
+##  Skills Demonstrated
 
 - SQL querying  
 - Data exploration  
@@ -61,7 +61,7 @@ The datasets were imported into a SQL database for analysis.
 
 ---
 
-## 🧪 Example SQL Queries
+##  Example SQL Queries
 
 ```sql
 -- View data
