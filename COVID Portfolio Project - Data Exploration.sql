@@ -159,3 +159,45 @@ Join PortfolioProject..CovidVaccinations vac
 where dea.continent is not null 
 
 
+
+-- Rolling Averages(7-Day / 14-Day)
+SELECT
+  date,
+  AVG(new_cases) OVER (ORDER BY date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS avg_7day_new_cases,
+  AVG(new_deaths) OVER (ORDER BY date ROWS BETWEEN 13 PRECEDING AND CURRENT ROW) AS avg_14day_new_deaths
+FROM coviddeaths
+WHERE location = 'India'
+ORDER BY date;
+
+
+
+--Case Fatality Rate(CFR) Over Time
+SELECT
+  location,
+  date,
+  (total_deaths * 100.0 / NULLIF(total_cases, 0)) AS case_fatality_rate
+FROM coviddeaths
+ORDER BY location, date;
+
+
+
+--Top 5 Countries by Infected Per Capita
+SELECT
+  location,
+  MAX(total_cases * 100.0 / population) AS infection_per_100_population
+FROM coviddeaths
+GROUP BY location
+ORDER BY infection_per_100_population DESC
+LIMIT 5;
+
+
+--Windows Function Ranking
+SELECT
+  location,
+  total_cases,
+  RANK() OVER (ORDER BY total_cases DESC) AS rank_by_cases
+FROM (
+  SELECT location, MAX(total_cases) AS total_cases
+  FROM coviddeaths
+  GROUP BY location
+) t;
